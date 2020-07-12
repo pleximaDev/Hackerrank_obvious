@@ -6,9 +6,9 @@
 
 echo "Commit's comment: '$1'"
 git add .
-git s
+git status
 git commit -m "$1"
 git push origin master
-git s
+git status
 
 
