@@ -8,7 +8,13 @@
 echo "Commit's comment: '$1'"
 git add .
 git status
-git commit -m "$1"
+
+if [$1 == ""]
+	then git commit -m "Default commit."
+else
+	git commit -m "$1"
+fi
+
 git push origin master
 git status
 
