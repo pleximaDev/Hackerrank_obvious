@@ -8,13 +8,13 @@
 echo "Commit's comment: '$1'"
 git add .
 git status
-
-if [$1 == ""]
-	then git commit -m "Default commit."
+if [ "$1" = "auto" ]; then
+	git commit -m "Automatic commit"
+elif [ "$1" = "" ]; then
+    git commit -m "Default commit"
 else
 	git commit -m "$1"
 fi
-
 git push origin master
 git status
 
