@@ -30,8 +30,7 @@ if __name__ == '__main__':
         elif command == "sort":
             my_list.sort()
         elif command == "pop":
-            i = param
-            my_list.pop(i)
+            my_list.pop()
         elif command == "reverse":
             my_list.reverse()
 
