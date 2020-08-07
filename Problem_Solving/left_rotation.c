@@ -16,7 +16,6 @@ char** split_string(char*);
 int main()
 {
     char** nd = split_string(readline());
-
     char* n_endptr;
     char* n_str = nd[0];
     int n = strtol(n_str, &n_endptr, 10);
@@ -43,6 +42,7 @@ int main()
         *(a + i) = a_item;
     }
 
+
     int loops;
     if (d > n - 1)
     {
@@ -52,7 +52,7 @@ int main()
     {
         loops = d;
     }
-
+    // printf("Loops == %d\n", loops);
     
     int* temp = malloc(n * sizeof(int));
     *(temp + 0) = *(a + loops);
@@ -67,6 +67,50 @@ int main()
     {
         printf("%d ", temp[i]);
     }
+
+
+    /////////////////////  Shortest way /////////////////////
+    // (Works, but occurs error with testcase #1)
+    // for(int i = d % n; i < n; i++)
+    // {
+    //     printf("%d ", a[i]);
+    // }
+    // for(int i = 0; i < d % n; i++)
+    // {
+    //     printf("%d ", a[i]);
+    // }
+    /////////////////////////////////////////////////////////
+
+
+
+
+    /////////////////////////////////////////////////////////////
+    // Works, but failes one testcase cause strange runtime error
+    // int loops;
+    // if (d > n - 1)
+    // {
+    //     loops = d % n;
+    // }
+    // else 
+    // {
+    //     loops = d;
+    // }
+    // // printf("Loops == %d\n", loops);
+    
+    // int* temp = malloc(n * sizeof(int));
+    // *(temp + 0) = *(a + loops);
+    // int j = loops + 1;
+    // for(int i = 1; i < n; i++)
+    // {
+    //     if(j >= n){j = 0;}
+    //     *(temp + i) = *(a + j);
+    //     j++;
+    // }
+    // for(int i=0; i < n; i++) 
+    // {
+    //     printf("%d ", temp[i]);
+    // }
+    /////////////////////////////////////////////////////////////
 
     ////////////////////////////////////////////////////////
     // int* temp = malloc(n * sizeof(int));
@@ -91,6 +135,7 @@ int main()
     ////////////////////////////////////////////////////////
     return 0;
 }
+// 77 97 58 1 86 58 26 10 86 51 41 73 89 7 10 1 59 58 84 77
 
 char* readline() {
     size_t alloc_length = 1024;
