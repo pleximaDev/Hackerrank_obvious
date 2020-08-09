@@ -23,10 +23,29 @@ public class Solution {
             }
         }
         */
-        System.out.println(arr.length);
+        int counter = 0;
         for ( String ss : arr)
         {
-            System.out.println(ss);
+            for(int i = 0; i < ss.length(); i++)
+            {
+                if( ss.charAt(i) >= 'a' && ss.charAt(i) <= 'z' || ss.charAt(i) >= 'A' && ss.charAt(i) <= 'Z'){ counter++; break; }
+            }
+        }
+        // System.out.println(arr.length);
+        System.out.println(counter);
+        boolean hasChar = false;
+        for ( String ss : arr)
+        {
+            hasChar = false;
+            for(int i = 0; i < ss.length(); i++)
+            {
+                if( ss.charAt(i) >= 'a' && ss.charAt(i) <= 'z' || ss.charAt(i) >= 'A' && ss.charAt(i) <= 'Z')
+                {
+                    hasChar = true;
+                    break;
+                }
+            }
+            if(hasChar) System.out.println(ss);
         }
 
 
